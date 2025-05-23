@@ -2,6 +2,19 @@
 
 > The foundational code for this project was generated with the assistance of Grok and Gemini AI.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Project Status](#project-status)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack-example)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Overview
 
 AI-Bookmarks-Manager is an intelligent tool designed to help you manage, organize, and rediscover your web bookmarks more effectively. Leveraging AI, it aims to go beyond traditional bookmarking by providing smart features like automatic tagging, content summarization, and intelligent search.
@@ -21,6 +34,16 @@ AI-Bookmarks-Manager is an intelligent tool designed to help you manage, organiz
 *   **Import/Export:** Support for importing from and exporting to common bookmark formats (e.g., HTML).
 *   **User-friendly Interface:** Intuitive design for easy navigation and management.
 
+## Project Status
+
+This project is currently in the **Testing Phase**. We are actively working on refining its features and ensuring stability.
+
+It aims to be an improved and more intelligent solution compared to previous attempts, such as [coff33ninja/bookmark-manager](https://github.com/coff33ninja/bookmark-manager). Feedback during this phase is highly appreciated!
+
+## Screenshots
+
+*(Screenshots will be added here once the user interface is further developed and finalized.)*
+
 ## Tech Stack (Example)
 
 This project might utilize a combination of technologies such as:
@@ -37,7 +60,7 @@ This project might utilize a combination of technologies such as:
 
 ### Prerequisites
 
-*(List any prerequisites here, for example:)*
+*(Update this section with the actual prerequisites for your project.)*
 *   Python 3.8+
 *   Node.js and npm/yarn (if a JavaScript frontend is used)
 *   Docker (optional, for containerized deployment)
@@ -46,7 +69,7 @@ This project might utilize a combination of technologies such as:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/ai-bookmarks-manager.git
+    git clone https://github.com/coff33ninja/ai-bookmarks-manager.git
     cd ai-bookmarks-manager
     ```
 2.  **Set up the backend (Example for Python):**
