@@ -1,0 +1,5 @@
+{"text": "Article about artificial intelligence advancements", "cats": {"tech": 1.0, "news": 0.3, "research": 0.7}}
+{"text": "Breaking news on global politics", "cats": {"news": 1.0, "politics": 0.8, "research": 0.2}}
+{"text": "Tutorial on React and FastAPI", "cats": {"tech": 1.0, "tutorial": 0.9, "development": 0.7}}
+{"text": "Scientific paper on climate change", "cats": {"research": 1.0, "science": 0.8, "environment": 0.6}}
+{"text": "Latest smartphone reviews", "cats": {"tech": 1.0, "reviews": 0.9, "news": 0.4}}

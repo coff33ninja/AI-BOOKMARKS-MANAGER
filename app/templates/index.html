@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bookmark Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
+    <link rel="stylesheet" href="/staticfiles/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>AI Bookmark Manager</h1>
+
+        <!-- Bookmark Form -->
+        <form id="bookmark-form" action="/bookmarks/" method="post">
+            <label for="url">URL</label>
+            <input type="url" id="url" name="url" required>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter title or use AI suggestion">
+            <label for="description">Description</label>
+            <textarea id="description" name="description"></textarea>
+            <label for="tags">Tags (comma-separated)</label>
+            <input type="text" id="tags" name="tags" placeholder="e.g., news, tech, ai">
+            <button type="button" onclick="suggestTitle()">Suggest Title</button>
+            <button type="button" onclick="suggestTags()">Suggest Tags</button>
+            <button type="submit">Add Bookmark</button>
+        </form>
+
+        <!-- Error/Success Messages -->
+        <div id="message"></div>
+
+        <!-- Bookmarks List -->
+        <h2>Bookmarks</h2>
+        {% if bookmarks %}
+        <table role="grid">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>URL</th>
+                    <th>Tags</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bookmark in bookmarks %}
+                <tr>
+                    <td>{{ bookmark.title }}</td>
+                    <td><a href="{{ bookmark.url }}" target="_blank">{{ bookmark.url }}</a></td>
+                    <td>{{ bookmark.tags or '' }}</td>
+                    <td>
+                        <form action="/bookmarks/delete/{{ bookmark.id }}" method="post" style="display:inline;">
+                            <button type="submit" class="secondary">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No bookmarks yet.</p>
+        {% endif %}
+    </main>
+    <script src="/staticfiles/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+bookmark_manager/
+├── backend/
+│   ├── __init__.py
+│   ├── main.py         # FastAPI app with analytics endpoints
+│   ├── models.py       # SQLAlchemy models with analytics fields
+│   ├── crud.py         # Database operations with analytics
+│   ├── database.py     # PostgreSQL setup
+│   ├── ai_utils.py     # RoBERTa-based tag predictions
+│   ├── ws_manager.py   # WebSocket connection manager
+│   ├── schemas.py      # Pydantic schemas
+│   └── train_roberta.py # Script to fine-tune RoBERTa
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/ # Updated for drag-and-drop and analytics
+│   │   ├── App.jsx
+│   │   ├── index.jsx
+│   │   └── styles/
+│   ├── package.json
+│   └── vite.config.js
+├── data/
+│   ├── training_data.jsonl # Training data for RoBERTa
+│   └── custom_roberta_model/ # Fine-tuned RoBERTa model
+├── requirements.txt
+├── docker-compose.yml
+└── run.sh

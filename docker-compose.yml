@@ -1,0 +1,43 @@
+# docker-compose.yml
+version: '3.8'
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: bookmarks
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/bookmarks
+      # For GPU acceleration with PyTorch/Transformers, you might need to configure runtime and devices
+      # if your Docker setup and host support it.
+      # e.g., runtime: nvidia (requires nvidia-docker)
+      #        environment:
+      #          - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data # Mount training data and model
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000" # Or whatever port Vite runs on (default 5173 if not changed)
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # Avoids overwriting node_modules in container by local ones
+
+volumes:
+  postgres_data:
